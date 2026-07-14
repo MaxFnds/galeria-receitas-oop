@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "titulo": "Bolo de Chocolate",
+    "descricao": "Bolo fofinho com cobertura de brigadeiro",
+    "tempo": "45 min",
+    "foto": null
+  },
+  {
+    "id": 2,
+    "titulo": "Pao de Queijo",
+    "descricao": "Receita mineira tradicional com polvilho",
+    "tempo": "30 min",
+    "foto": null
+  },
+  {
+    "id": 3,
+    "titulo": "Coxinha",
+    "descricao": "Massa crocante com recheio de frango desfiado",
+    "tempo": "60 min",
+    "foto": null
+  },
+  {
+    "id": 4,
+    "titulo": "Brigadeiro",
+    "descricao": "Doce brasileiro classico com chocolate e leite condensado",
+    "tempo": "20 min",
+    "foto": null
+  }
+]

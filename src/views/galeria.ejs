@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Galeria de Receitas</title><link rel="stylesheet" href="/css/styles.css"></head>
+<body>
+<header><div class="inner"><h1>Galeria de Receitas</h1><span style="color:#889;font-size:.85rem">Aula 39 - Upload</span></div></header>
+<div class="container">
+  <div class="stats"><div class="stat"><div class="num" id="total">0</div><div class="rot">Receitas</div></div></div>
+  <div class="card"><h2>Adicionar Receita</h2>
+    <form id="form-receita" onsubmit="criarReceita(event)">
+      <div class="form-row">
+        <input type="text" name="titulo" placeholder="Nome da receita" required>
+        <input type="text" name="descricao" placeholder="Descricao curta">
+        <input type="text" name="tempo" placeholder="Tempo (ex: 30 min)">
+      </div>
+      <div class="form-row" style="margin-top:8px">
+        <input type="file" name="foto" accept="image/*">
+        <button type="submit" class="btn">Adicionar</button>
+      </div>
+    </form>
+  </div>
+  <div class="busca"><input type="text" oninput="buscarComDebounce(event)" placeholder="Buscar receita..."></div>
+  <div id="loading">Carregando...</div>
+  <div id="lista-receitas" class="grid"></div>
+</div>
+<script src="/js/galeria.js"></script>
+</body></html>

@@ -1,0 +1,31 @@
+:root{--bg:#1a1a2e;--card:#16213e;--text:#e0e0e0;--muted:#889;--border:#2a3a5c;--accent:#E8621A;--green:#27AE60;--red:#E74C3C;--blue:#2980B9;--purple:#8E44AD}
+*{margin:0;padding:0;box-sizing:border-box}body{font-family:'Segoe UI',sans-serif;background:var(--bg);color:var(--text)}
+.container{max-width:800px;margin:0 auto;padding:20px}
+header{background:var(--card);border-bottom:3px solid var(--accent);padding:14px 0}
+header .inner{max-width:800px;margin:0 auto;padding:0 20px;display:flex;align-items:center;justify-content:space-between}
+header h1{color:var(--accent);font-size:1.3rem}
+.card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px;margin-bottom:16px}
+.card h2{color:var(--accent);font-size:1.1rem;margin-bottom:12px;border-bottom:2px solid var(--border);padding-bottom:8px}
+.form-row{display:flex;gap:8px;margin-top:8px;flex-wrap:wrap;align-items:center}
+.form-row input[type="text"],.form-row input[type="number"]{flex:1;min-width:120px;padding:10px;border-radius:6px;border:1px solid var(--border);background:#0f3460;color:var(--text);font-size:.95rem}
+.form-row input[type="file"]{font-size:.85rem;color:var(--muted)}
+.form-row input:focus{outline:none;border-color:var(--accent)}
+.btn{padding:8px 16px;border:none;border-radius:6px;background:var(--accent);color:white;cursor:pointer;font-weight:600;font-size:.9rem}
+.btn:disabled{opacity:0.5;cursor:not-allowed}
+.btn-sm{padding:4px 10px;font-size:.8rem}
+.btn-danger{background:var(--red)}.btn-edit{background:var(--purple)}
+.stats{display:flex;gap:12px;margin-bottom:16px}.stat{flex:1;background:var(--card);border:1px solid var(--border);border-radius:10px;padding:12px;text-align:center}
+.stat .num{font-size:1.5rem;font-weight:bold;color:var(--accent)}.stat .rot{font-size:.8rem;color:var(--muted)}
+.busca{margin-bottom:16px}.busca input{width:100%;padding:10px;border-radius:6px;border:1px solid var(--border);background:#0f3460;color:var(--text);font-size:1rem}
+#loading{text-align:center;color:var(--accent);padding:20px;display:none;font-size:1.1rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px}
+.receita-card{background:var(--card);border:1px solid var(--border);border-radius:12px;overflow:hidden;transition:transform .2s}
+.receita-card:hover{transform:translateY(-2px)}
+.receita-card .foto{width:100%;height:140px;background:#0f3460;display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:2rem}
+.receita-card .foto img{width:100%;height:140px;object-fit:cover}
+.receita-card .info{padding:12px}
+.receita-card .info h3{color:var(--accent);font-size:1rem;margin-bottom:4px}
+.receita-card .info p{font-size:.85rem;color:var(--muted);margin-bottom:4px}
+.receita-card .info .tempo{font-size:.8rem;color:var(--green)}
+.receita-card .acoes{padding:0 12px 12px;display:flex;gap:4px}
+.vazio{text-align:center;color:var(--muted);padding:30px}.erro{text-align:center;color:var(--red);padding:20px}
