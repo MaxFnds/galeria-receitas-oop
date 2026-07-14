@@ -55,30 +55,39 @@ function exibirReceitas(receitas) {
 // ============================================================
 async function criarReceita(event) {
   event.preventDefault();
-  const btn = event.target.querySelector('button');
-  btn.disabled = true;
-  btn.textContent = 'Salvando...';
-  try {
-    // TODO: trocar por FormData
-    const titulo = document.querySelector('[name="titulo"]').value;
-    const descricao = document.querySelector('[name="descricao"]').value;
-    const tempo = document.querySelector('[name="tempo"]').value;
-    const response = await fetch('/api/receitas', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ titulo, descricao, tempo }),
-      // TODO: substituir as 3 linhas acima por:
-      // body: new FormData(document.getElementById('form-receita')),
-      // (sem headers Content-Type!)
-    });
-    const json = await response.json();
-    if (!response.ok) { alert('Erro: ' + json.erro); return; }
-    document.getElementById('form-receita').reset();
-    carregarReceitas();
-  } catch (e) { alert('Falha ao criar.'); }
-  finally { btn.disabled = false; btn.textContent = 'Adicionar'; }
-}
 
+  const btn = event.target.querySelector("button");
+
+  btn.disabled = true;
+  btn.textContent = "Salvando...";
+
+  try {
+    const formData = new FormData(
+      document.getElementById("form-receita")
+    );
+
+    const response = await fetch("/api/receitas", {
+      method: "POST",
+      body: formData,
+    });
+
+    const json = await response.json();
+
+    if (!response.ok) {
+      alert("Erro: " + json.erro);
+      return;
+    }
+
+    document.getElementById("form-receita").reset();
+
+    carregarReceitas();
+  } catch (e) {
+    alert("Falha ao criar.");
+  } finally {
+    btn.disabled = false;
+    btn.textContent = "Adicionar";
+  }
+}
 // PRONTO: editar titulo
 async function editarReceita(id) {
   const novoTitulo = prompt('Novo titulo:');
